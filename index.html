@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="h-full bg-[#020202]">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AXIOM HIVE Deterministic Substrate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --axiom-bg: #020202;
+        --axiom-accent: #06af6e;
+      }
+      body {
+        background-color: var(--axiom-bg);
+      }
+      .uv-glow {
+        text-shadow: 0 0 8px rgba(6, 175, 110, 0.9), 0 0 16px rgba(6, 175, 110, 0.6);
+      }
+      .brutalist-border {
+        box-shadow: 0 0 0 1px rgba(6, 175, 110, 0.35);
+      }
+      .crt-scanlines {
+        position: relative;
+        overflow: hidden;
+      }
+      .crt-scanlines::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(
+          rgba(0, 0, 0, 0.4) 1px,
+          transparent 1px
+        );
+        background-size: 100% 2px;
+        mix-blend-mode: soft-light;
+        pointer-events: none;
+        opacity: 0.35;
+      }
+    </style>
+  </head>
+  <body class="h-full text-xs text-[#06af6e]">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>

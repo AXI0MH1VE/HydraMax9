@@ -1,0 +1,60 @@
+name: Release - Build and Publish
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-publish:
+    name: Build and Publish Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production
+        run: npm run build
+
+      - name: Get version from package.json
+        id: version
+        run: echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: |
+            ## Release ${{ github.ref_name }}
+            
+            ### Changes
+            - See CHANGELOG.md for detailed changes
+            
+            ### Installation
+            ```bash
+            npm install hydramax9@${{ steps.version.outputs.VERSION }}
+            ```
+            
+            ### Build Artifacts
+            - Production build: `dist/`
+            - Test coverage: `coverage/`
+          files: |
+            dist/
+          generate_release_notes: true
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-${{ github.ref_name }}
+          path: dist/

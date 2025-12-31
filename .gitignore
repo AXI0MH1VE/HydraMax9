@@ -1,0 +1,83 @@
+# Ignore system and user folders
+/../
+/../../
+/../../../
+
+# Ignore Windows system folders
+AppData/
+Contacts/
+Desktop.bak/
+Documents/
+Downloads/
+Favorites/
+Links/
+Music/
+My Drive/
+NTUSER.DAT*
+OnDeleterive/
+Pictures/
+Saved Games/
+Searches/
+Videos/
+
+# Ignore OneDrive root clutter
+*.ps1
+*.md
+*.json
+*.ini
+*.log
+*.bak
+*.snapshots/
+*.config/
+*.docker/
+*.gnupg/
+*.lesshst
+*.minikube/
+*.ollama/
+*.platformio/
+*.quokka/
+*.rustup/
+*.th-client/
+*.vs-kubernetes/
+*.windsurf/
+
+# Ignore node_modules and build output
+node_modules/
+dist/
+build/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore test coverage
+coverage/
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore log files
+*.log
+
+# Ignore backup files
+*.bak
+
+# Ignore core dumps
+core.*
+
+# Ignore other unwanted files
+*.swp
+*.swo
+
+# Project-specific ignores (add more as needed)
+# Allow README.md
+!README.md
