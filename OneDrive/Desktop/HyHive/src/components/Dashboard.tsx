@@ -41,21 +41,15 @@ const Dashboard: React.FC = () => {
 
           <div className="flex items-center gap-6">
             <div className="hidden md:flex flex-col items-end">
-              <span className="text-gray-500 uppercase tracking-widest text-[8px]">
-                Supervisor
-              </span>
+              <span className="text-gray-500 uppercase tracking-widest text-[8px]">Supervisor</span>
               <span className="text-[10px] font-bold text-white flex items-center gap-1">
                 <UserCheck size={10} className="text-[#06af6e]" /> ALEXIS ADAMS
               </span>
             </div>
             <div className="h-8 w-px bg-[#06af6e]/20" />
             <div className="flex flex-col items-end">
-              <span className="text-gray-500 uppercase tracking-widest text-[8px]">
-                Status
-              </span>
-              <span className="text-[10px] font-bold text-[#06af6e] animate-pulse">
-                AXIOMATIC
-              </span>
+              <span className="text-gray-500 uppercase tracking-widest text-[8px]">Status</span>
+              <span className="text-[10px] font-bold text-[#06af6e] animate-pulse">AXIOMATIC</span>
             </div>
           </div>
         </header>

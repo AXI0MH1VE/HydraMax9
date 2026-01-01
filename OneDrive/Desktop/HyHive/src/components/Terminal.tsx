@@ -43,10 +43,7 @@ const Terminal: React.FC = () => {
     const cmd = current.trim();
     setCurrent("");
     setBusy(true);
-    setEntries((prev) => [
-      ...prev,
-      { id: `in-${Date.now()}`, type: "input", text: cmd },
-    ]);
+    setEntries((prev) => [...prev, { id: `in-${Date.now()}`, type: "input", text: cmd }]);
 
     if (cmd === "clear") {
       setEntries([]);
@@ -82,10 +79,7 @@ const Terminal: React.FC = () => {
 
   return (
     <div className="h-full flex flex-col font-mono text-[11px] text-green-300">
-      <div
-        ref={containerRef}
-        className="flex-1 overflow-y-auto bg-black/80 p-3 space-y-1"
-      >
+      <div ref={containerRef} className="flex-1 overflow-y-auto bg-black/80 p-3 space-y-1">
         {entries.map((e) => (
           <div key={e.id}>
             {e.type === "input" && (
@@ -97,9 +91,7 @@ const Terminal: React.FC = () => {
             {e.type === "output" && (
               <pre className="whitespace-pre-wrap text-gray-100">{e.text}</pre>
             )}
-            {e.type === "system" && (
-              <div className="text-[10px] text-blue-300">{e.text}</div>
-            )}
+            {e.type === "system" && <div className="text-[10px] text-blue-300">{e.text}</div>}
           </div>
         ))}
       </div>
@@ -117,9 +109,7 @@ const Terminal: React.FC = () => {
           disabled={busy}
         />
         {busy && (
-          <span className="ml-2 text-[9px] text-[#06af6e] animate-pulse">
-            Deep_Thinking…
-          </span>
+          <span className="ml-2 text-[9px] text-[#06af6e] animate-pulse">Deep_Thinking…</span>
         )}
       </form>
     </div>

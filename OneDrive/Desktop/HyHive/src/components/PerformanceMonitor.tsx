@@ -23,10 +23,7 @@ const PerformanceMonitor: React.FC = () => {
         const lastT = prev.length ? prev[prev.length - 1].t : 0;
         const next: TelemetryPoint = {
           t: lastT + 1,
-          value:
-            0.5 +
-            Math.sin((lastT + 1) / 4) * 0.3 +
-            (Math.random() - 0.5) * 0.08,
+          value: 0.5 + Math.sin((lastT + 1) / 4) * 0.3 + (Math.random() - 0.5) * 0.08,
         };
         const updated = [...prev, next];
         if (updated.length > MAX_POINTS) {
@@ -49,11 +46,7 @@ const PerformanceMonitor: React.FC = () => {
         <span>ΔS=0 Channel</span>
       </div>
       <div className="flex-1 bg-black/60 border border-[#06af6e]/20 relative overflow-hidden">
-        <svg
-          viewBox="0 0 120 40"
-          preserveAspectRatio="none"
-          className="w-full h-full"
-        >
+        <svg viewBox="0 0 120 40" preserveAspectRatio="none" className="w-full h-full">
           <defs>
             <linearGradient id="axiomPerf" x1="0" x2="0" y1="0" y2="1">
               <stop offset="0%" stopColor="#22c55e" stopOpacity="0.9" />
@@ -68,12 +61,8 @@ const PerformanceMonitor: React.FC = () => {
                   "M " +
                   series
                     .map((p, idx) => {
-                      const x =
-                        (idx / Math.max(series.length - 1, 1)) * 120.0;
-                      const y =
-                        40 -
-                        ((p.value - minValue) / range) * 32 -
-                        4;
+                      const x = (idx / Math.max(series.length - 1, 1)) * 120.0;
+                      const y = 40 - ((p.value - minValue) / range) * 32 - 4;
                       return `${x.toFixed(2)} ${y.toFixed(2)}`;
                     })
                     .join(" L ")
@@ -87,12 +76,8 @@ const PerformanceMonitor: React.FC = () => {
                   "M 0 40 " +
                   series
                     .map((p, idx) => {
-                      const x =
-                        (idx / Math.max(series.length - 1, 1)) * 120.0;
-                      const y =
-                        40 -
-                        ((p.value - minValue) / range) * 32 -
-                        4;
+                      const x = (idx / Math.max(series.length - 1, 1)) * 120.0;
+                      const y = 40 - ((p.value - minValue) / range) * 32 - 4;
                       return `${x.toFixed(2)} ${y.toFixed(2)}`;
                     })
                     .join(" L ") +
@@ -114,9 +99,7 @@ const PerformanceMonitor: React.FC = () => {
         </div>
         <div>
           <div className="text-gray-500 uppercase">Latency</div>
-          <div className="text-[#06af6e]">
-            {(6.5 + Math.random() * 1.4).toFixed(2)} ms P95
-          </div>
+          <div className="text-[#06af6e]">{(6.5 + Math.random() * 1.4).toFixed(2)} ms P95</div>
         </div>
         <div>
           <div className="text-gray-500 uppercase">Circuit</div>

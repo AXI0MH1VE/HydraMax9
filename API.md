@@ -10,17 +10,19 @@ HydraMax9 integrates with multiple AI and data services to provide comprehensive
 
 ```typescript
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
+const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models";
 ```
 
 ### Models
 
 #### Gemini 2.0 Flash (Experimental)
+
 - **Model ID**: `gemini-2.0-flash-exp`
 - **Use Case**: Fast inference, real-time responses
 - **Features**: Grounding with Google Search
 
 #### Gemini 1.5 Pro
+
 - **Model ID**: `gemini-1.5-pro`
 - **Use Case**: Complex reasoning, long context
 - **Features**: Advanced analysis, multi-modal support
@@ -47,24 +49,26 @@ interface GeminiRequest {
 
 ```typescript
 const request = {
-  contents: [{
-    role: 'user',
-    parts: [{ text: 'Your query here' }]
-  }],
+  contents: [
+    {
+      role: "user",
+      parts: [{ text: "Your query here" }],
+    },
+  ],
   tools: [{ googleSearch: {} }],
   safetySettings: [
     {
-      category: 'HARM_CATEGORY_DANGEROUS_CONTENT',
-      threshold: 'BLOCK_ONLY_HIGH'
-    }
-  ]
+      category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+      threshold: "BLOCK_ONLY_HIGH",
+    },
+  ],
 };
 
 const response = await axios.post(
   `${GEMINI_API_URL}/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`,
   request,
   {
-    headers: { 'Content-Type': 'application/json' }
+    headers: { "Content-Type": "application/json" },
   }
 );
 ```
@@ -106,9 +110,9 @@ interface GeminiResponse {
 
 ```typescript
 interface PerformanceMetrics {
-  cpu: number;        // 0-100
-  memory: number;     // 0-100
-  latency: number;    // milliseconds
+  cpu: number; // 0-100
+  memory: number; // 0-100
+  latency: number; // milliseconds
   throughput: number; // requests/sec
 }
 
@@ -124,7 +128,7 @@ const metrics = getPerformanceMetrics();
 interface SecurityEvent {
   id: string;
   code: string;
-  severity: 'LOW' | 'MEDIUM' | 'HIGH';
+  severity: "LOW" | "MEDIUM" | "HIGH";
   message: string;
   ts: string; // ISO 8601
   entropy: number; // 0-1
@@ -132,10 +136,10 @@ interface SecurityEvent {
 
 // Usage
 const event = createSecurityEvent({
-  code: 'SEC-001',
-  severity: 'HIGH',
-  message: 'Anomaly detected',
-  entropy: 0.85
+  code: "SEC-001",
+  severity: "HIGH",
+  message: "Anomaly detected",
+  entropy: 0.85,
 });
 ```
 
@@ -145,10 +149,10 @@ const event = createSecurityEvent({
 
 ```typescript
 interface EntropyMetrics {
-  currentEntropy: number;     // 0-1
-  averageEntropy: number;     // 0-1
-  entropyThreshold: number;   // 0-1
-  violations: number;         // count
+  currentEntropy: number; // 0-1
+  averageEntropy: number; // 0-1
+  entropyThreshold: number; // 0-1
+  violations: number; // count
 }
 
 // Usage
@@ -190,9 +194,9 @@ try {
 } catch (error) {
   if (axios.isAxiosError(error)) {
     const apiError: APIError = {
-      code: error.response?.data?.error?.code || 'UNKNOWN',
+      code: error.response?.data?.error?.code || "UNKNOWN",
       message: error.response?.data?.error?.message || error.message,
-      details: error.response?.data
+      details: error.response?.data,
     };
     handleError(apiError);
   }
@@ -225,7 +229,7 @@ const makeRequestWithRetry = async (fn: () => Promise<any>, maxRetries = 3) => {
       return await fn();
     } catch (error) {
       if (i === maxRetries - 1) throw error;
-      await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
+      await new Promise((resolve) => setTimeout(resolve, Math.pow(2, i) * 1000));
     }
   }
 };
@@ -258,11 +262,13 @@ VITE_MAX_RETRIES=3
 ```typescript
 const performMetaSearch = async (query: string): Promise<GeminiIntelResult> => {
   const request = {
-    contents: [{
-      role: 'user',
-      parts: [{ text: query }]
-    }],
-    tools: [{ googleSearch: {} }]
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: query }],
+      },
+    ],
+    tools: [{ googleSearch: {} }],
   };
 
   const response = await axios.post(
@@ -274,7 +280,7 @@ const performMetaSearch = async (query: string): Promise<GeminiIntelResult> => {
     query,
     response: response.data.candidates[0].content.parts[0].text,
     sources: response.data.candidates[0].groundingMetadata?.groundingChunks || [],
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   };
 };
 ```
@@ -286,13 +292,13 @@ const startMonitoring = (intervalMs: number = 1000) => {
   setInterval(() => {
     const metrics = getPerformanceMetrics();
     const anomaly = detectAnomaly(metrics);
-    
+
     if (anomaly.isAnomaly) {
       createSecurityEvent({
-        code: 'PERF-001',
-        severity: 'MEDIUM',
+        code: "PERF-001",
+        severity: "MEDIUM",
         message: anomaly.reason,
-        entropy: calculateEntropy(metrics).currentEntropy
+        entropy: calculateEntropy(metrics).currentEntropy,
       });
     }
   }, intervalMs);
@@ -304,31 +310,34 @@ const startMonitoring = (intervalMs: number = 1000) => {
 ### Mock API Responses
 
 ```typescript
-import { jest } from '@jest/globals';
-import axios from 'axios';
+import { jest } from "@jest/globals";
+import axios from "axios";
 
-jest.mock('axios');
+jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
-test('should handle API response', async () => {
+test("should handle API response", async () => {
   mockedAxios.post.mockResolvedValueOnce({
     data: {
-      candidates: [{
-        content: {
-          parts: [{ text: 'Test response' }]
-        }
-      }]
-    }
+      candidates: [
+        {
+          content: {
+            parts: [{ text: "Test response" }],
+          },
+        },
+      ],
+    },
   });
 
-  const result = await performMetaSearch('test query');
-  expect(result.response).toBe('Test response');
+  const result = await performMetaSearch("test query");
+  expect(result.response).toBe("Test response");
 });
 ```
 
 ## Support
 
 For API-related questions or issues:
+
 - Email: devdollzai@gmail.com
 - GitHub Issues: https://github.com/AXI0MH1VE/HydraMax9/issues
 - Documentation: https://github.com/AXI0MH1VE/HydraMax9

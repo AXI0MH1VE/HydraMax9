@@ -2,9 +2,9 @@
 jest.mock("@google/genai", () => ({
   GoogleGenAI: jest.fn().mockImplementation(() => ({
     models: {
-      generateContent: jest.fn()
-    }
-  }))
+      generateContent: jest.fn(),
+    },
+  })),
 }));
 
 import { GeminiService } from "../services/geminiService";
@@ -39,9 +39,7 @@ describe("GeminiService", () => {
 
     it("should throw error when API key is missing", () => {
       delete process.env.API_KEY;
-      expect(() => new GeminiService()).toThrow(
-        /API_KEY environment variable must be set/
-      );
+      expect(() => new GeminiService()).toThrow(/API_KEY environment variable must be set/);
     });
   });
 
@@ -56,9 +54,9 @@ describe("GeminiService", () => {
     it("should handle API errors gracefully", async () => {
       const svc = new GeminiService();
       // Mock the AI service to throw an error
-      jest.spyOn(svc["ai"].models, "generateContent").mockRejectedValue(
-        new Error("API connection failed")
-      );
+      jest
+        .spyOn(svc["ai"].models, "generateContent")
+        .mockRejectedValue(new Error("API connection failed"));
 
       const result = await svc.processKernelCommand("test command");
       expect(result).toContain("AXIOM_HALT");
@@ -69,9 +67,7 @@ describe("GeminiService", () => {
   describe("searchIntel", () => {
     it("should throw error for empty query", async () => {
       const svc = new GeminiService();
-      await expect(svc.searchIntel("")).rejects.toThrow(
-        "Intel query must be non-empty"
-      );
+      await expect(svc.searchIntel("")).rejects.toThrow("Intel query must be non-empty");
     });
 
     it("should return empty sources array when no grounding metadata", async () => {
@@ -92,9 +88,7 @@ describe("GeminiService", () => {
   describe("getSystemTelemetry", () => {
     it("should return empty array on API error", async () => {
       const svc = new GeminiService();
-      jest.spyOn(svc["ai"].models, "generateContent").mockRejectedValue(
-        new Error("API error")
-      );
+      jest.spyOn(svc["ai"].models, "generateContent").mockRejectedValue(new Error("API error"));
 
       const result = await svc.getSystemTelemetry();
       expect(result).toEqual([]);
@@ -122,9 +116,9 @@ describe("GeminiService", () => {
 
     it("should handle invalid JSON gracefully", async () => {
       const svc = new GeminiService();
-      jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue(
-        createMockResponse({ text: "invalid json" })
-      );
+      jest
+        .spyOn(svc["ai"].models, "generateContent")
+        .mockResolvedValue(createMockResponse({ text: "invalid json" }));
 
       const result = await svc.getSystemTelemetry();
       expect(result).toEqual([]);

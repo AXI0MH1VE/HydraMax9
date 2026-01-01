@@ -46,8 +46,7 @@ COMMAND: ${command}`,
       return response.text || "DSI_ERROR: NULL_STATE_RESPONSE";
     } catch (error) {
       console.error("DSI Error:", error);
-      const message =
-        error instanceof Error ? error.message : "Unknown exception";
+      const message = error instanceof Error ? error.message : "Unknown exception";
       return `AXIOM_HALT: Structural integrity compromised. ${message}`;
     }
   }
@@ -73,8 +72,7 @@ COMMAND: ${command}`,
       });
 
       const text = response.text || "";
-      const sources = 
-        response.candidates?.[0]?.groundingMetadata?.groundingChunks || [];
+      const sources = response.candidates?.[0]?.groundingMetadata?.groundingChunks || [];
 
       return { text, sources };
     } catch (error) {
@@ -111,8 +109,7 @@ COMMAND: ${command}`,
     try {
       const response = await this.ai.models.generateContent({
         model: FLASH_MODEL,
-        contents:
-          "Generate 5 technical Axiom Hive system logs as a JSON array of strings.",
+        contents: "Generate 5 technical Axiom Hive system logs as a JSON array of strings.",
         config: {
           responseMimeType: "application/json",
         },

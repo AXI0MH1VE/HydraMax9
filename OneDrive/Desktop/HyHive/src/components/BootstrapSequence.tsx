@@ -13,9 +13,7 @@ const STEPS = [
   "LOCK_STATE: ΔS = 0",
 ];
 
-const BootstrapSequence: React.FC<BootstrapSequenceProps> = ({
-  onComplete,
-}) => {
+const BootstrapSequence: React.FC<BootstrapSequenceProps> = ({ onComplete }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -36,16 +34,10 @@ const BootstrapSequence: React.FC<BootstrapSequenceProps> = ({
         <div className="font-mono text-[11px] text-green-300 space-y-1">
           {STEPS.map((step, i) => (
             <div key={step} className="flex items-center gap-2">
-              <span className="w-3">
-                {i < index ? "✔" : i === index ? ">" : " "}
-              </span>
+              <span className="w-3">{i < index ? "✔" : i === index ? ">" : " "}</span>
               <span
                 className={
-                  i < index
-                    ? "text-[#06af6e]"
-                    : i === index
-                    ? "text-white"
-                    : "text-gray-600"
+                  i < index ? "text-[#06af6e]" : i === index ? "text-white" : "text-gray-600"
                 }
               >
                 {step}

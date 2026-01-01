@@ -41,16 +41,7 @@
       "@types/*": ["OneDrive/Desktop/HyHive/src/types/*"]
     }
   },
-  "include": [
-    "OneDrive/Desktop/HyHive/src/**/*",
-    "jest.setup.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/__tests__/**"
-  ],
+  "include": ["OneDrive/Desktop/HyHive/src/**/*", "jest.setup.ts"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx", "**/__tests__/**"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

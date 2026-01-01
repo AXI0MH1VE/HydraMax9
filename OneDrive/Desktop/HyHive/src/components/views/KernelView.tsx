@@ -29,12 +29,8 @@ const KernelView: React.FC = () => {
             <Info size={16} />
           </div>
           <div className="flex flex-col">
-            <span className="text-[8px] text-gray-500 uppercase font-bold">
-              Bit Integrity
-            </span>
-            <span className="text-[10px] text-white font-mono">
-              BIT_PERFECT_GUARANTEED
-            </span>
+            <span className="text-[8px] text-gray-500 uppercase font-bold">Bit Integrity</span>
+            <span className="text-[10px] text-white font-mono">BIT_PERFECT_GUARANTEED</span>
           </div>
         </div>
         <div className="bg-black/40 border border-[#06af6e]/20 p-3 rounded-sm flex items-center gap-3">
@@ -42,12 +38,8 @@ const KernelView: React.FC = () => {
             <TerminalIcon size={16} />
           </div>
           <div className="flex flex-col">
-            <span className="text-[8px] text-gray-500 uppercase font-bold">
-              Latency Mode
-            </span>
-            <span className="text-[10px] text-white font-mono">
-              0.00ms_INVARIANT
-            </span>
+            <span className="text-[8px] text-gray-500 uppercase font-bold">Latency Mode</span>
+            <span className="text-[10px] text-white font-mono">0.00ms_INVARIANT</span>
           </div>
         </div>
         <div className="bg-black/40 border border-[#06af6e]/20 p-3 rounded-sm flex items-center gap-3">
@@ -55,12 +47,8 @@ const KernelView: React.FC = () => {
             <Cpu size={16} />
           </div>
           <div className="flex flex-col">
-            <span className="text-[8px] text-gray-500 uppercase font-bold">
-              Inference Engine
-            </span>
-            <span className="text-[10px] text-white font-mono">
-              G3_PRO_KERNEL
-            </span>
+            <span className="text-[8px] text-gray-500 uppercase font-bold">Inference Engine</span>
+            <span className="text-[10px] text-white font-mono">G3_PRO_KERNEL</span>
           </div>
         </div>
       </div>

@@ -13,8 +13,7 @@ const AIChat: React.FC = () => {
     {
       id: "sys-1",
       role: "model",
-      text:
-        "TACTICAL INTEL ONLINE. Provide a scenario, hypothesis, or threat surface for deep analysis.",
+      text: "TACTICAL INTEL ONLINE. Provide a scenario, hypothesis, or threat surface for deep analysis.",
     },
   ]);
   const [input, setInput] = useState("");
