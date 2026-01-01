@@ -60,6 +60,10 @@ describe("GeminiService", () => {
       jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue({
         text: "Test response",
         candidates: [],
+        data: '',
+        functionCalls: [],
+        executableCode: undefined,
+        codeExecutionResult: undefined,
       });
 
       const result = await svc.searchIntel("test query");
@@ -90,6 +94,10 @@ describe("GeminiService", () => {
             message: "System initialized",
           },
         ]),
+        data: '',
+        functionCalls: [],
+        executableCode: undefined,
+        codeExecutionResult: undefined,
       };
       jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue(mockResponse);
 
@@ -103,6 +111,10 @@ describe("GeminiService", () => {
       const svc = new GeminiService();
       jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue({
         text: "invalid json",
+        data: '',
+        functionCalls: [],
+        executableCode: undefined,
+        codeExecutionResult: undefined,
       });
 
       const result = await svc.getSystemTelemetry();

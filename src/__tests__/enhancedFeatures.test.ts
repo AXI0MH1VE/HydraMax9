@@ -43,7 +43,7 @@ describe("Enhanced AXIOM HIVE Features", () => {
       const svc = new GeminiService();
       jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue({
         text: "Test response",
-        data: {},
+        data: '',
         functionCalls: [],
         executableCode: undefined,
         codeExecutionResult: undefined,
@@ -58,14 +58,14 @@ describe("Enhanced AXIOM HIVE Features", () => {
       const mockGenerate = jest.spyOn(svc["ai"].models, "generateContent");
       mockGenerate.mockResolvedValueOnce({
         text: "Analysis: query intent is X, key concepts: A, B, C",
-        data: {},
+        data: '',
         functionCalls: [],
         executableCode: undefined,
         codeExecutionResult: undefined,
       });
       mockGenerate.mockResolvedValueOnce({
         text: "Final response",
-        data: {},
+        data: '',
         functionCalls: [],
         executableCode: undefined,
         codeExecutionResult: undefined,
@@ -109,7 +109,7 @@ describe("Enhanced AXIOM HIVE Features", () => {
             ],
           },
         }],
-        data: {},
+        data: '',
         functionCalls: [],
         executableCode: undefined,
         codeExecutionResult: undefined,
@@ -143,7 +143,7 @@ describe("Enhanced AXIOM HIVE Features", () => {
       const svc = new GeminiService();
       jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue({
         text: "VALID",
-        data: {},
+        data: '',
         functionCalls: [],
         executableCode: undefined,
         codeExecutionResult: undefined,
@@ -160,7 +160,7 @@ describe("Enhanced AXIOM HIVE Features", () => {
       const svc = new GeminiService();
       jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue({
         text: "INVALID",
-        data: {},
+        data: '',
         functionCalls: [],
         executableCode: undefined,
         codeExecutionResult: undefined,
@@ -228,7 +228,7 @@ describe("Enhanced AXIOM HIVE Features", () => {
       mockGenerate.mockRejectedValueOnce(new Error("Primary failed"));
       mockGenerate.mockResolvedValueOnce({
         text: "Fallback response",
-        data: {},
+        data: '',
         functionCalls: [],
         executableCode: undefined,
         codeExecutionResult: undefined,
@@ -246,7 +246,7 @@ describe("Enhanced AXIOM HIVE Features", () => {
       mockGenerate.mockResolvedValueOnce({
         text: "Fallback response",
         candidates: [],
-        data: {},
+        data: '',
         functionCalls: [],
         executableCode: undefined,
         codeExecutionResult: undefined,

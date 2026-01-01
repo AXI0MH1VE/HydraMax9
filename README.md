@@ -3,6 +3,7 @@
 ## 🔥 Overview
 
 **HydraMax9** is a deterministic AGI substrate system built on the AXIOM HIVE architecture. It provides:
+
 - **HYDRA Wyrm System Architecture** - Multi-layered deterministic computing framework
 - **Ontological Monument Pipeline** - Semiotic → Ontology → KG → RAG workflow
 - **Compute-Centric Rendering (CCR)** - Nanite, voxel/SDF, and hybrid NeRF visualization
@@ -13,7 +14,7 @@
 
 ### Core Components
 
-```
+```text
 HydraMax9
 ├── HYDRA Wyrm System
 │   ├── Bootstrap Sequence (Deterministic initialization)
@@ -106,6 +107,7 @@ PORT=3000
 ### TypeScript Configuration
 
 The project uses strict TypeScript configuration with:
+
 - `strict: true`
 - `noImplicitAny: true`
 - Path aliases for clean imports
@@ -115,19 +117,25 @@ The project uses strict TypeScript configuration with:
 ### Core Concepts
 
 #### Zero-Entropy Law
+
 All system operations maintain ΔS=0 (zero entropy). When violations occur, the system automatically neutralizes them through:
+
 - Entropy neutralization vectors
 - Deterministic verification
 - State reproducibility checks
 
 #### Mixture-of-Recursions (MoR)
+
 Enhanced reasoning through recursive query refinement:
+
 - Configurable recursion depth (default: 2)
 - Automatic query analysis and elaboration
 - Fallback to base case when depth exhausted
 
 #### Graph-RAG
+
 Retrieval-Augmented Generation with ontology constraints:
+
 - Search-grounded intelligence
 - Ontology validation
 - Grounding metrics (relevance scoring)
@@ -163,6 +171,7 @@ const currentModel = gemini.getCurrentModel();
 ## 🎯 Roadmap
 
 ### Phase 1: Core Infrastructure ✅
+
 - [x] Bootstrap sequence with deterministic initialization
 - [x] Security module with Zero-Entropy Law enforcement
 - [x] Performance monitoring with DAB tracking
@@ -170,6 +179,7 @@ const currentModel = gemini.getCurrentModel();
 - [x] Gemini AI integration
 
 ### Phase 2: System Architecture ✅
+
 - [x] MoR (Mixture-of-Recursions) support
 - [x] Graph-RAG queries with ontology validation
 - [x] Model switching and fallback mechanisms
@@ -177,6 +187,7 @@ const currentModel = gemini.getCurrentModel();
 - [x] Cache locality metrics
 
 ### Phase 3: Ontological Pipeline 🚧
+
 - [ ] Semiotic layer (terminology & concepts)
 - [ ] Ontology layer (knowledge graph schema)
 - [ ] KG layer (graph database integration)
@@ -184,6 +195,7 @@ const currentModel = gemini.getCurrentModel();
 - [ ] Governance metrics (groundedness, faithfulness)
 
 ### Phase 4: Compute-Centric Rendering 🚧
+
 - [ ] Voxel-based rendering
 - [ ] Signed Distance Field (SDF) implementation
 - [ ] Nanite-level detail support
@@ -192,6 +204,7 @@ const currentModel = gemini.getCurrentModel();
 - [ ] Cache locality optimization
 
 ### Phase 5: Testing & Validation 🚧
+
 - [ ] Comprehensive unit test coverage
 - [ ] Integration tests
 - [ ] E2E tests
@@ -218,6 +231,7 @@ const currentModel = gemini.getCurrentModel();
 ### Commit Messages
 
 Follow conventional commits:
+
 - `feat:` - New features
 - `fix:` - Bug fixes
 - `docs:` - Documentation updates
@@ -231,17 +245,20 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 🌐 Links
 
-- **GitHub**: https://github.com/AXI0MH1VE/HydraMax9
-- **Documentation**: https://axiomhive.github.io
-- **Discord**: https://discord.gg/axiomhive
+- [**GitHub**](https://github.com/AXI0MH1VE/HydraMax9)
+- [**Documentation**](https://axiomhive.github.io)
+- [**Discord**](https://discord.gg/axiomhive)
 
 ## 📞 Support
 
 For issues and questions:
+
 - Open an issue on GitHub
 - Join our Discord community
-- Email: support@axiomhive.ai
+- [Email: support@axiomhive.ai](mailto:support@axiomhive.ai)
 
 ---
 
-**AXIOM HIVE - Deterministic AGI for the Future**
+## Attribution
+
+AXIOM HIVE - Deterministic AGI for the Future
