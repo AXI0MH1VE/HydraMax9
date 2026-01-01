@@ -1,0 +1,33 @@
+# CODEOWNERS file for HydraMax9
+# These owners will be the default owners for everything in the repo.
+# Unless a later match takes precedence, they will be requested for
+# review when someone opens a pull request.
+
+# Default owners for everything
+* @AXI0MH1VE
+
+# Core application code
+/OneDrive/Desktop/HyHive/src/ @AXI0MH1VE
+
+# Configuration files
+*.config.js @AXI0MH1VE
+*.config.ts @AXI0MH1VE
+.github/ @AXI0MH1VE
+
+# Documentation
+*.md @AXI0MH1VE
+docs/ @AXI0MH1VE
+
+# Docker and CI/CD
+Dockerfile @AXI0MH1VE
+docker-compose.yml @AXI0MH1VE
+.github/workflows/ @AXI0MH1VE
+
+# Dependencies
+package.json @AXI0MH1VE
+package-lock.json @AXI0MH1VE
+
+# Tests
+**/__tests__/ @AXI0MH1VE
+*.test.ts @AXI0MH1VE
+*.test.tsx @AXI0MH1VE
