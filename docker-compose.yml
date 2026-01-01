@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+  hydramax9:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hydramax9
+    ports:
+      - "8080:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - hydramax9-network
+
+  # Development service
+  hydramax9-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      target: development
+    container_name: hydramax9-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./OneDrive/Desktop/HyHive:/app/OneDrive/Desktop/HyHive
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - VITE_DEBUG_MODE=true
+    command: npm run dev
+    restart: unless-stopped
+    networks:
+      - hydramax9-network
+    profiles:
+      - dev
+
+networks:
+  hydramax9-network:
+    driver: bridge
