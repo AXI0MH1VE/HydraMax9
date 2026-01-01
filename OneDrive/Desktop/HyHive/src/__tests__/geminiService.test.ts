@@ -1,4 +1,23 @@
+// Mock @google/genai module
+jest.mock("@google/genai", () => ({
+  GoogleGenAI: jest.fn().mockImplementation(() => ({
+    models: {
+      generateContent: jest.fn()
+    }
+  }))
+}));
+
 import { GeminiService } from "../services/geminiService";
+
+// Helper to create mock response that matches expected type
+const createMockResponse = (partial: { text: string; candidates?: unknown[] }) => ({
+  text: partial.text,
+  candidates: partial.candidates || [],
+  data: {},
+  functionCalls: [],
+  executableCode: [],
+  codeExecutionResult: null,
+});
 
 describe("GeminiService", () => {
   const OLD_ENV = process.env;
@@ -57,10 +76,12 @@ describe("GeminiService", () => {
 
     it("should return empty sources array when no grounding metadata", async () => {
       const svc = new GeminiService();
-      jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue({
-        text: "Test response",
-        candidates: [],
-      });
+      jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue(
+        createMockResponse({
+          text: "Test response",
+          candidates: [],
+        })
+      );
 
       const result = await svc.searchIntel("test query");
       expect(result.text).toBe("Test response");
@@ -81,7 +102,7 @@ describe("GeminiService", () => {
 
     it("should parse valid JSON response", async () => {
       const svc = new GeminiService();
-      const mockResponse = {
+      const mockResponse = createMockResponse({
         text: JSON.stringify([
           {
             timestamp: "2024-01-01T00:00:00Z",
@@ -90,7 +111,7 @@ describe("GeminiService", () => {
             message: "System initialized",
           },
         ]),
-      };
+      });
       jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue(mockResponse);
 
       const result = await svc.getSystemTelemetry();
@@ -101,9 +122,9 @@ describe("GeminiService", () => {
 
     it("should handle invalid JSON gracefully", async () => {
       const svc = new GeminiService();
-      jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue({
-        text: "invalid json",
-      });
+      jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue(
+        createMockResponse({ text: "invalid json" })
+      );
 
       const result = await svc.getSystemTelemetry();
       expect(result).toEqual([]);

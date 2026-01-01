@@ -125,8 +125,15 @@ COMMAND: ${command}`,
         return [];
       }
 
+      interface ParsedLogItem {
+        timestamp?: string;
+        level?: string;
+        subsystem?: string;
+        message?: string;
+      }
+
       return parsed
-        .map((item: any) => ({
+        .map((item: ParsedLogItem) => ({
           timestamp: String(item.timestamp ?? new Date().toISOString()),
           level: (item.level === "WARN" || item.level === "ERROR" ? item.level : "INFO") as
             | "INFO"

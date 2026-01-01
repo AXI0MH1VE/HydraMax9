@@ -1,6 +1,5 @@
 import {
   AxiomSystemLog,
-  GeminiIntelResult,
   SecurityEvent,
   EntropyMetrics,
   AnomalyDetectionResult,

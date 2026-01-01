@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import BootstrapSequence from '../../components/BootstrapSequence';
 
@@ -19,6 +18,6 @@ describe('BootstrapSequence Component', () => {
 
   it('displays loading progress', () => {
     render(<BootstrapSequence onComplete={() => {}} />);
-    expect(screen.getByText(/Initializing/i)).toBeInTheDocument();
+    expect(screen.getByText(/STATE_VECTOR_LOADING/i)).toBeInTheDocument();
   });
 });
