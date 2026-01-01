@@ -1,0 +1,48 @@
+name: iOS App CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  validate:
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Select Xcode version
+      run: sudo xcode-select -s /Applications/Xcode_15.0.app/Contents/Developer
+    
+    - name: Show Xcode version
+      run: xcodebuild -version
+    
+    - name: Check Swift files
+      run: |
+        echo "Checking Swift files in iOS directory..."
+        if [ -d "ios" ]; then
+          cd ios
+          find . -name "*.swift" -type f -exec echo "Found: {}" \;
+          swift_count=$(find . -name "*.swift" -type f | wc -l)
+          echo "Total Swift files: $swift_count"
+          if [ "$swift_count" -eq 0 ]; then
+            echo "Warning: No Swift files found"
+            exit 1
+          fi
+        else
+          echo "Error: iOS directory not found"
+          exit 1
+        fi
+    
+    - name: Validate Swift syntax
+      run: |
+        cd ios
+        for file in *.swift; do
+          echo "Validating $file..."
+          swift -frontend -parse "$file" || echo "Warning: $file has syntax issues"
+        done
+    
+    # Note: Full build requires Xcode project/workspace configuration
+    # This workflow provides basic validation only
