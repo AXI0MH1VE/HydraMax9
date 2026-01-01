@@ -60,7 +60,8 @@ describe("GeminiService", () => {
       jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue({
         text: "Test response",
         candidates: [],
-      });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } as any);
 
       const result = await svc.searchIntel("test query");
       expect(result.text).toBe("Test response");
@@ -91,7 +92,8 @@ describe("GeminiService", () => {
           },
         ]),
       };
-      jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue(mockResponse);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue(mockResponse as any);
 
       const result = await svc.getSystemTelemetry();
       expect(Array.isArray(result)).toBe(true);
@@ -103,7 +105,8 @@ describe("GeminiService", () => {
       const svc = new GeminiService();
       jest.spyOn(svc["ai"].models, "generateContent").mockResolvedValue({
         text: "invalid json",
-      });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } as any);
 
       const result = await svc.getSystemTelemetry();
       expect(result).toEqual([]);

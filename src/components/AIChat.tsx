@@ -32,10 +32,7 @@ const AIChat: React.FC = () => {
     setMessages((prev) => [...prev, userMsg]);
     setBusy(true);
     try {
-      const history = [...messages, userMsg].map((m) => ({
-        role: m.role,
-        text: m.text,
-      }));
+      // Future enhancement: could use message history for chat context
       const reply = await gemini.processKernelCommand(text);
       setMessages((prev) => [
         ...prev,

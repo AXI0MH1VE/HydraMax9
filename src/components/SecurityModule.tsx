@@ -75,7 +75,7 @@ const SecurityModule: React.FC = () => {
   }, [entropyMetrics.entropyThreshold]);
 
   // Enforce Zero-Entropy Law: neutralize entropy violations
-  const enforceZeroEntropyLaw = useCallback((entropy: number, violations: number): SecurityEvent | null => {
+  const enforceZeroEntropyLaw = useCallback((entropy: number, _violations: number): SecurityEvent | null => {
     if (entropy > entropyMetrics.entropyThreshold) {
       return {
         id: String(Date.now()),

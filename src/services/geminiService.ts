@@ -126,15 +126,18 @@ COMMAND: ${command}`,
       }
 
       return parsed
-        .map((item: any) => ({
-          timestamp: String(item.timestamp ?? new Date().toISOString()),
-          level: (item.level === "WARN" || item.level === "ERROR" ? item.level : "INFO") as
-            | "INFO"
-            | "WARN"
-            | "ERROR",
-          subsystem: String(item.subsystem ?? "CORE"),
-          message: String(item.message ?? "No message"),
-        }))
+        .map((item: unknown) => {
+          const obj = item as Record<string, unknown>;
+          return {
+            timestamp: String(obj.timestamp ?? new Date().toISOString()),
+            level: (obj.level === "WARN" || obj.level === "ERROR" ? obj.level : "INFO") as
+              | "INFO"
+              | "WARN"
+              | "ERROR",
+            subsystem: String(obj.subsystem ?? "CORE"),
+            message: String(obj.message ?? "No message"),
+          };
+        })
         .slice(0, 32);
     } catch (e) {
       console.error("Telemetry Error:", e);

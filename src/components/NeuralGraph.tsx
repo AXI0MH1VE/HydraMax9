@@ -11,7 +11,7 @@ const NeuralGraph: React.FC = () => {
 
     let animationFrame: number;
 
-    const nodes = Array.from({ length: 36 }).map((_, i) => ({
+    const nodes = Array.from({ length: 36 }).map(() => ({
       x: Math.random(),
       y: Math.random(),
       phase: Math.random() * Math.PI * 2,
