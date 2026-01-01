@@ -55,7 +55,7 @@ const Terminal: React.FC = () => {
     }
 
     try {
-      const resp = await gemini.processKernelCommand(cmd);
+      const resp = await gemini().processKernelCommand(cmd);
       setEntries((prev) => [
         ...prev,
         {

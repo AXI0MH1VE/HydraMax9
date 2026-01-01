@@ -146,4 +146,11 @@ COMMAND: ${command}`,
   }
 }
 
-export const gemini = new GeminiService();
+let geminiInstance: GeminiService | null = null;
+
+export const gemini = (): GeminiService => {
+  if (!geminiInstance) {
+    geminiInstance = new GeminiService();
+  }
+  return geminiInstance;
+};

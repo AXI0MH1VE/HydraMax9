@@ -33,7 +33,7 @@ const AIChat: React.FC = () => {
     setBusy(true);
     try {
       // Future enhancement: could use message history for chat context
-      const reply = await gemini.processKernelCommand(text);
+      const reply = await gemini().processKernelCommand(text);
       setMessages((prev) => [
         ...prev,
         {

@@ -18,7 +18,7 @@ const IntelView: React.FC = () => {
     setError(null);
     setResult(null);
     try {
-      const data = await gemini.searchIntel(query);
+      const data = await gemini().searchIntel(query);
       setResult(data);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Unknown error";

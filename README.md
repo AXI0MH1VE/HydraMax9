@@ -1,96 +1,295 @@
 # HydraMax9
 
-**AXIOM HIVE Deterministic Substrate System** by AXI0MH1VE
+**Deterministic AI Substrate for Sovereign Intelligence Operations**
 
-HydraMax9 is a cutting-edge AI-powered system featuring a modern React web interface and iOS mobile app, integrated with Google's Gemini AI for advanced intelligence capabilities.
+*A production-grade operations console for observable, auditable, and governed artificial intelligence*
 
-## 🚀 Features
+---
 
-### Web Application
-- **Modern Desktop UI** with brutalist design aesthetics
-- **Bootstrap Sequence** with system initialization animation
-- **Gemini AI Integration** with deep thinking capabilities
-- **Modular Architecture** with dedicated views:
-  - Overview Dashboard
-  - Tactical AI Chat
-  - Intelligence Search with grounding
-  - Kernel Command Interface
-- **Real-time System Telemetry** and performance monitoring
-- **Security Module** for system protection
-- **Neural Graph Visualization**
+## Executive Overview
 
-### iOS Application
-- Native SwiftUI app for iOS 17+
-- JWT authentication with Keychain storage
-- MVVM architecture
-- Reports management
-- Settings and configuration
-- Secure API integration
+HydraMax9 represents a fundamental shift from black-box AI inference to **deterministic intelligence substrate**—a full-stack platform where AI behavior is observable, traceable, and controllable in real-time.
 
-## 📋 Prerequisites
+Unlike traditional AI deployments that obscure reasoning behind API calls, HydraMax9 treats intelligence as **critical infrastructure**, providing:
 
-### For Web Application
-- Node.js 18.0.0 or higher
-- npm 9.0.0 or higher
+- **Neural graph visualization** exposing reasoning chains and decision flows
+- **Real-time entropy analysis** detecting anomalies, prompt injection, and data leakage
+- **Sovereign architecture** enabling air-gapped, federated, and multi-region deployment
+- **Comprehensive telemetry** for SRE-grade observability and compliance auditing
+
+Built for **regulated sectors** (finance, healthcare, critical infrastructure, national security) where "it works most of the time" is unacceptable.
+
+### The Second Wave of AI: Control & Sovereignty
+
+The first wave of AI (2022-2025) prioritized **capability**: "Can it generate coherent text? Can it write code? Can it reason?"
+
+The second wave (2026+) prioritizes **control**: "Can we prove what it did? Can we prevent data leakage? Can we deploy it without cloud dependency?"
+
+HydraMax9 is purpose-built for this transition—treating AI not as a black-box SaaS product, but as **critical infrastructure** requiring the same operational rigor as nuclear reactor controls, air traffic management, or financial settlement systems.
+
+**This is not AI for hobbyists. This is AI for operators.**
+
+---
+
+## 🎯 Core Capabilities
+
+### 1. Deterministic Operations Console
+
+Five concurrent, interconnected operational views:
+
+#### **Neural Graph Visualizer**
+- Node-and-edge representation of conversational and reasoning flows
+- Token probability distributions and attention weights
+- Entropy profiling for confidence analysis
+- Causal flow tracing from input to conclusion
+- Anomaly detection through topology shifts
+
+#### **Performance Monitor** 
+- SRE-grade observability with percentile latency distributions
+- Token throughput and cache hit analysis
+- API quota utilization and capacity planning
+- Historical trends and anomaly flagging
+- Concurrent session load tracking
+
+#### **Security Entropy Module**
+- Real-time entropy spike detection (prompt injection signatures)
+- Information rate analysis for data leakage
+- Context boundary enforcement
+- Adversarial input pattern recognition
+- Predictive threat detection, not reactive
+
+#### **AI Chat Interface**
+- High-signal terminal-style interaction
+- Command-driven rather than conversational
+- Telemetry-rich responses with reasoning traces
+- Session state management and context control
+
+#### **Bootstrap Sequence**
+- Cinematic initialization reinforcing operational psychology
+- System integrity verification on startup
+- Operational status dashboard
+- Mission-critical framing for high-stakes workflows
+
+### 2. Sovereign Architecture
+
+**Model-Agnostic Intelligence**: Current Gemini integration designed for multi-model orchestration:
+- Parallel inference across Gemini, Claude, Llama, Mistral
+- Consensus voting and consistency verification
+- Confidence scoring and fallback mechanisms
+- Continual model evaluation and performance tracking
+
+**Distributed Substrate** (Roadmap):
+- Regional sovereignty with independent data residency
+- Air-gapped deployment with local models
+- Federated operation across security domains
+- Zero-trust inter-substrate communication
+
+**Quantum-Resistant Security** (Roadmap):
+- Lattice-based cryptography (Kyber, Dilithium)
+- Hash-based audit trail signatures
+- Cryptographic agility for algorithm rotation
+
+### 3. Governance and Compliance
+
+**Environment-Based Configuration**:
+```env
+GEMINI_API_KEY                      # Model access credentials
+BACKEND_BASE_URL                    # API routing endpoint
+SECURITY_MODULE_ENABLED=true        # Risk profile activation
+ENTROPY_THRESHOLD=0.85              # Anomaly sensitivity
+ANOMALY_DETECTION_MODE=strict       # Enforcement level
+AUDIT_LOG_RETENTION_DAYS=2555       # Compliance retention (7 years)
+RATE_LIMIT_REQUESTS_PER_MINUTE=100  # Operational SLA
+TLS_CERTIFICATE_PATH=/path/to/cert  # Transport security
+```
+
+**Regulatory Alignment**:
+- EU AI Act transparency requirements
+- NIST AI Risk Management Framework
+- SEC AI governance guidelines
+- Healthcare explainability mandates
+
+---
+
+## 🏗️ Architecture
+
+### Production-Grade Engineering Stack
+
+**Frontend**:
+- React 18 + TypeScript 5.3 for type safety
+- Vite for optimized builds
+- TailwindCSS for brutalist design system
+- Jest + React Testing Library for comprehensive coverage
+
+**Design Philosophy**:
+- **Deep-black backgrounds**: Signal-to-noise optimization
+- **UV green accents**: High-alert status signaling
+- **Monospace typography**: Terminal metaphor reinforcement
+- **CRT scanline effects**: Analog instrumentation aesthetic
+- **Brutalist layout**: Dense, information-rich, purposeful
+
+This is not retro aesthetics—it's **operational psychology**. Operators interfacing with a "console" behave differently than users clicking a "chatbot."
+
+**Service Layer**:
+```
+User Input → React Components → Service Layer → Backend Orchestration → Gemini API
+                                       ↓
+                              Telemetry Capture
+                                       ↓
+                   Neural Graph + Performance + Security Modules
+```
+
+**Quality Gates**:
+- ESLint for static analysis
+- Prettier for formatting consistency
+- TypeScript strict mode for compile-time safety
+- GitHub Actions CI/CD (test, lint, build, security scan)
+
+---
+
+## 📦 Target Deployments
+
+### Regulated Financial Services
+- **Use Case**: Loan decisions, trading, risk assessment, compliance
+- **Requirement**: Prove to auditors why AI made specific decisions
+- **HydraMax9 Value**: Neural graph traces every decision to model calls
+
+### Healthcare and Life Sciences
+- **Use Case**: Clinical decision support, diagnostic assistance, drug discovery
+- **Requirement**: Explainability clinicians can trust and validate
+- **HydraMax9 Value**: Entropy detection prevents hallucinations; audit trails support peer review
+
+### Critical Infrastructure
+- **Use Case**: Energy, transportation, telecommunications, water systems
+- **Requirement**: Deterministic behavior under adversarial conditions
+- **HydraMax9 Value**: Security module and circuit-breaking prevent cascading failures
+
+### National Security and Defense
+- **Use Case**: Intelligence analysis, threat assessment, command support
+- **Requirement**: Air-gapped, sovereign operation; no cloud dependency
+- **HydraMax9 Value**: Distributed architecture and cryptographic integrity
+
+### Enterprise Risk and Compliance
+- **Use Case**: Any AI-driven decisions triggering regulatory action
+- **Requirement**: Comprehensive audit trail and governance
+- **HydraMax9 Value**: Configuration-driven policies and observability
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18.0.0+
+- npm 9.0.0+
 - Google Gemini API key ([Get one here](https://aistudio.google.com/app/apikey))
 
-### For iOS Application
-- macOS with Xcode 15+
-- iOS 17.0+ deployment target
-- Valid Apple Developer account (for device deployment)
+### Installation
 
-## 🛠️ Installation & Setup
+```bash
+# Clone repository
+git clone https://github.com/AXI0MH1VE/HydraMax9.git
+cd HydraMax9
 
-### Web Application
+# Install dependencies
+npm install
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/AXI0MH1VE/HydraMax9.git
-   cd HydraMax9
-   ```
+# Configure environment
+cp .env.example .env
+# Edit .env and add your GEMINI_API_KEY
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+# Start development server
+npm run dev
+```
 
-3. **Configure environment variables**
-   ```bash
-   cp .env.example .env
-   ```
-   Edit `.env` and add your Gemini API key:
-   ```
-   API_KEY=your_actual_gemini_api_key_here
-   ```
+Application available at `http://localhost:5173`
 
-4. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-   The application will be available at `http://localhost:5173`
+### Production Build
 
-5. **Build for production**
-   ```bash
-   npm run build
-   ```
-   The production build will be in the `dist/` directory.
+```bash
+npm run build      # Optimized bundle
+npm run preview    # Test production build locally
+```
 
-### iOS Application
+---
+
+## 🛣️ Technology Roadmap
+
+### Phase 1: Multi-Model Orchestration (Q1 2026)
+- **Parallel Inference**: Run Gemini, Claude, GPT-4, Llama simultaneously
+- **Consensus Voting**: Cross-validate responses for deterministic output
+- **Confidence Scoring**: Weighted trust metrics per model
+- **Fallback Mechanisms**: Automatic degradation and recovery
+
+### Phase 2: Distributed Substrate (Q2-Q3 2026)
+- **Regional Sovereignty**: Independent data residency per jurisdiction
+- **Air-Gapped Deployment**: Local model hosting with zero cloud dependency
+- **Federated Operation**: Cross-domain intelligence sharing with zero-trust
+- **Edge Computing**: WebAssembly modules for client-side inference
+
+### Phase 3: Quantum-Resistant Security (Q4 2026)
+- **Post-Quantum Cryptography**: Kyber (key exchange), Dilithium (signatures)
+- **Hash-Based Audit Trails**: Immutable decision provenance
+- **Cryptographic Agility**: Hot-swappable algorithms for future threats
+- **Hardware Security Modules**: TPM/HSM integration for key management
+
+### Phase 4: Autonomous Governance (2027)
+- **Policy-as-Code**: Declarative compliance rules
+- **Automated Auditing**: Real-time regulatory reporting
+- **Risk Scoring**: Continuous decision impact analysis
+- **Explainability API**: Machine-readable reasoning for regulatory review
+
+---
+
+## 🧪 Quality Assurance
+
+### Test Suite
+```bash
+npm test                # Run all tests
+npm run test:watch      # Watch mode
+npm run test:coverage   # Coverage report
+```
+
+### Code Quality
+```bash
+npm run lint            # ESLint analysis
+npm run lint:fix        # Auto-fix issues
+npm run type-check      # TypeScript validation
+```
+
+### Continuous Integration
+GitHub Actions validates every commit:
+- Unit and component tests
+- Linting and formatting
+- TypeScript type checking
+- Production build verification
+- Security vulnerability scanning
+
+---
+
+## 📱 iOS Application
+
+The iOS companion app provides mobile access to HydraMax9 capabilities:
 
 1. **Open the iOS project**
    ```bash
    cd ios
    open HydraMax9.xcodeproj
    ```
-   (Note: Project files are currently in the `AxiomHive ios` directory)
 
 2. **Configure the project**
    - Set your development team in Xcode
    - Update the bundle identifier if needed
+   - Configure API endpoints in app settings
 
 3. **Build and run**
    - Select a simulator or connected device
    - Press ⌘R to build and run
+
+**Architecture**:
+- Swift/SwiftUI with MVVM pattern
+- Keychain Services for secure credential storage
+- URLSession with JWT authentication
+- Real-time telemetry sync with web console
 
 ## 📦 Project Structure
 

@@ -1,7 +1,7 @@
 {
   "name": "hydramax9",
   "version": "1.0.0",
-  "description": "HydraMax9 - Axiom Hive Deterministic Substrate System",
+  "description": "Deterministic AI Substrate for Sovereign Intelligence Operations - Observable, auditable, and governed artificial intelligence for regulated sectors",
   "private": true,
   "type": "module",
   "scripts": {
@@ -49,10 +49,19 @@
   "keywords": [
     "axiom-hive",
     "hydramax9",
-    "ai",
+    "deterministic-ai",
+    "sovereign-intelligence",
+    "ai-governance",
+    "ai-observability",
     "gemini",
     "react",
-    "typescript"
+    "typescript",
+    "ai-compliance",
+    "enterprise-ai",
+    "regulated-ai",
+    "neural-graph",
+    "security-entropy",
+    "ai-substrate"
   ],
   "author": "AXI0MH1VE",
   "license": "MIT"
