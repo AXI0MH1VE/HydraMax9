@@ -32,12 +32,14 @@ By participating in this project, you agree to abide by our [Code of Conduct](CO
 ### Pull Requests
 
 1. **Fork the repository**
+
    ```bash
    git clone https://github.com/AXI0MH1VE/HydraMax9.git
    cd HydraMax9
    ```
 
 2. **Create a feature branch**
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -48,6 +50,7 @@ By participating in this project, you agree to abide by our [Code of Conduct](CO
    - Update documentation
 
 4. **Test your changes**
+
    ```bash
    npm run test
    npm run lint
@@ -67,6 +70,7 @@ By participating in this project, you agree to abide by our [Code of Conduct](CO
      ```
 
 6. **Push to your fork**
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -80,11 +84,13 @@ By participating in this project, you agree to abide by our [Code of Conduct](CO
 ## Development Setup
 
 ### Prerequisites
+
 - Node.js >= 18.0.0
 - npm >= 9.0.0
 - Git
 
 ### Installation
+
 ```bash
 npm install
 cp .env.example .env
@@ -93,6 +99,7 @@ npm run dev
 ```
 
 ### Project Structure
+
 ```
 OneDrive/Desktop/HyHive/src/
 ├── components/       # React components
@@ -108,6 +115,7 @@ OneDrive/Desktop/HyHive/src/
 ## Coding Standards
 
 ### TypeScript
+
 - Use TypeScript for all new code
 - Enable strict mode
 - Define proper types (avoid `any`)
@@ -115,6 +123,7 @@ OneDrive/Desktop/HyHive/src/
 - Use type unions for discriminated unions
 
 ### React
+
 - Use functional components with hooks
 - Keep components focused and composable
 - Use meaningful prop names
@@ -122,12 +131,14 @@ OneDrive/Desktop/HyHive/src/
 - Memoize expensive computations
 
 ### Styling
+
 - Use TailwindCSS utility classes
 - Follow the brutalist design system
 - Maintain UV green accent color (#06af6e)
 - Use consistent spacing and sizing
 
 ### Testing
+
 - Write unit tests for utilities and services
 - Write component tests for UI components
 - Aim for >80% code coverage
@@ -135,6 +146,7 @@ OneDrive/Desktop/HyHive/src/
 - Use meaningful test descriptions
 
 ### Code Style
+
 - Follow ESLint and Prettier configurations
 - Use 2 spaces for indentation
 - Use semicolons
@@ -144,6 +156,7 @@ OneDrive/Desktop/HyHive/src/
 ## Testing Guidelines
 
 ### Running Tests
+
 ```bash
 # Run all tests
 npm test
@@ -156,6 +169,7 @@ npm run test:coverage
 ```
 
 ### Writing Tests
+
 ```typescript
 import { render, screen } from '@testing-library/react';
 import Component from './Component';
@@ -200,6 +214,7 @@ describe('Component', () => {
 ## Questions?
 
 If you have questions:
+
 - Check existing issues and discussions
 - Create a new discussion
 - Contact maintainers: devdollzai@gmail.com

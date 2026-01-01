@@ -13,8 +13,7 @@ const AIChat: React.FC = () => {
     {
       id: "sys-1",
       role: "model",
-      text:
-        "TACTICAL INTEL ONLINE. Provide a scenario, hypothesis, or threat surface for deep analysis.",
+      text: "TACTICAL INTEL ONLINE. Provide a scenario, hypothesis, or threat surface for deep analysis.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -32,10 +31,6 @@ const AIChat: React.FC = () => {
     setMessages((prev) => [...prev, userMsg]);
     setBusy(true);
     try {
-      const history = [...messages, userMsg].map((m) => ({
-        role: m.role,
-        text: m.text,
-      }));
       const reply = await gemini.processKernelCommand(text);
       setMessages((prev) => [
         ...prev,

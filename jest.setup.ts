@@ -1,4 +1,23 @@
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
+
+// Set default environment variables for tests
+process.env.API_KEY = "test-api-key-12345";
+
+// Mock @google/genai module globally for all tests
+jest.mock("@google/genai", () => ({
+  GoogleGenAI: jest.fn().mockImplementation(() => ({
+    models: {
+      generateContent: jest.fn().mockResolvedValue({
+        text: "Mock response",
+        candidates: [],
+        data: {},
+        functionCalls: [],
+        executableCode: [],
+        codeExecutionResult: null,
+      }),
+    },
+  })),
+}));
 
 // Mock sessionStorage
 const sessionStorageMock = (() => {
@@ -18,12 +37,12 @@ const sessionStorageMock = (() => {
   };
 })();
 
-Object.defineProperty(window, 'sessionStorage', {
+Object.defineProperty(window, "sessionStorage", {
   value: sessionStorageMock,
 });
 
 // Mock window.matchMedia
-Object.defineProperty(window, 'matchMedia', {
+Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: jest.fn().mockImplementation((query) => ({
     matches: false,

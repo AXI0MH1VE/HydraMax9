@@ -12,6 +12,7 @@ HydraMax9 is an advanced deterministic AI substrate designed for sovereign intel
 ## 🚀 Features
 
 ### Core Capabilities
+
 - **Deterministic AI Substrate**: Mathematically grounded, reproducible AI operations
 - **Real-time Performance Monitoring**: System telemetry, resource tracking, and anomaly detection
 - **Neural Graph Visualization**: Dynamic visualization of AI processing pathways
@@ -21,6 +22,7 @@ HydraMax9 is an advanced deterministic AI substrate designed for sovereign intel
 - **Bootstrap Sequence**: Cinematic system initialization with status monitoring
 
 ### Technical Architecture
+
 - **Frontend**: React 18 + TypeScript 5.3 + Vite
 - **Styling**: TailwindCSS with custom brutalist design system
 - **State Management**: React hooks with centralized app state
@@ -54,18 +56,22 @@ cp .env.example .env
 ## 🏃 Running the Application
 
 ### Development Mode
+
 ```bash
 npm run dev
 ```
+
 Access the application at `http://localhost:5173`
 
 ### Production Build
+
 ```bash
 npm run build
 npm run preview
 ```
 
 ### Testing
+
 ```bash
 # Run all tests
 npm test
@@ -78,6 +84,7 @@ npm run test:coverage
 ```
 
 ### Code Quality
+
 ```bash
 # Lint code
 npm run lint
@@ -126,11 +133,13 @@ HydraMax9/
 ## 🎨 Design System
 
 ### Color Palette
+
 - **Background**: `#020202` (Deep Black)
 - **Primary Accent**: `#06af6e` (UV Green)
 - **Text**: UV Green with glow effects
 
 ### Visual Style
+
 - **Aesthetic**: Brutalist + Cyberpunk
 - **Typography**: Monospace fonts with UV glow
 - **Effects**: CRT scanlines, phosphor glow, data stream animations
@@ -154,6 +163,7 @@ See `.env.example` for all available configuration options. Key variables:
 ## 📱 iOS Companion App
 
 The `AxiomHive ios` directory contains a Swift-based iOS companion application with:
+
 - Secure API client with keychain integration
 - Report viewing and management
 - Run trigger capabilities
@@ -162,6 +172,7 @@ The `AxiomHive ios` directory contains a Swift-based iOS companion application w
 ## 🚢 Deployment
 
 ### Docker Deployment
+
 ```bash
 # Build Docker image
 docker build -t hydramax9:latest .
@@ -171,6 +182,7 @@ docker run -p 8080:80 hydramax9:latest
 ```
 
 ### Environment-Specific Builds
+
 ```bash
 # Development
 NODE_ENV=development npm run build
@@ -188,7 +200,9 @@ NODE_ENV=production npm run build
 5. Open a Pull Request
 
 ### Commit Convention
+
 We follow [Conventional Commits](https://www.conventionalcommits.org/):
+
 - `feat:` New features
 - `fix:` Bug fixes
 - `docs:` Documentation changes
@@ -204,6 +218,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author: Alexis M. Adams
 
 **Axiom Hive**
+
 - Email: devdollzai@gmail.com
 - GitHub: [@AXI0MH1VE](https://github.com/AXI0MH1VE)
 - Twitter: [@devdollzai](https://twitter.com/devdollzai)

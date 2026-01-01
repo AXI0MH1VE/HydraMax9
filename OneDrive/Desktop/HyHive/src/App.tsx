@@ -19,11 +19,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#020202] text-[#06af6e]">
-      {!isBooted ? (
-        <BootstrapSequence onComplete={handleBootComplete} />
-      ) : (
-        <Dashboard />
-      )}
+      {!isBooted ? <BootstrapSequence onComplete={handleBootComplete} /> : <Dashboard />}
     </div>
   );
 };

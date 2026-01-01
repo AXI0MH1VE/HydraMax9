@@ -26,9 +26,7 @@ const OverviewView: React.FC = () => {
         <section className="flex-1 border border-[#06af6e]/30 p-4 bg-black/40 overflow-y-auto brutalist-border">
           <div className="flex items-center gap-2 mb-4 border-b border-[#06af6e]/20 pb-2 text-[#06af6e]">
             <Activity size={16} />
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em]">
-              Log-Quadric Telemetry
-            </h2>
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em]">Log-Quadric Telemetry</h2>
           </div>
           <PerformanceMonitor />
         </section>
@@ -36,9 +34,7 @@ const OverviewView: React.FC = () => {
         <section className="h-[280px] border border-[#06af6e]/30 bg-black/40 p-4 brutalist-border overflow-hidden">
           <div className="flex items-center gap-2 mb-4 border-b border-[#06af6e]/20 pb-2">
             <Shield size={16} className="text-white" />
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em]">
-              ZEL Events
-            </h2>
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em]">ZEL Events</h2>
           </div>
           <SecurityModule />
         </section>

@@ -59,11 +59,7 @@ const IntelView: React.FC = () => {
               disabled={loading || !query.trim()}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-[#06af6e] hover:text-white transition-colors"
             >
-              {loading ? (
-                <Zap className="animate-spin" size={20} />
-              ) : (
-                <Search size={20} />
-              )}
+              {loading ? <Zap className="animate-spin" size={20} /> : <Search size={20} />}
             </button>
           </form>
 
@@ -76,9 +72,7 @@ const IntelView: React.FC = () => {
             </span>
           </div>
           {error && (
-            <div className="mt-3 text-[10px] text-red-400 font-mono">
-              AXIOM_FAULT: {error}
-            </div>
+            <div className="mt-3 text-[10px] text-red-400 font-mono">AXIOM_FAULT: {error}</div>
           )}
         </section>
 
@@ -141,9 +135,7 @@ const IntelView: React.FC = () => {
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center opacity-20 select-none">
               <Globe size={120} className="mx-auto mb-4 text-[#06af6e]" />
-              <p className="text-xs font-bold uppercase tracking-[0.5em]">
-                Awaiting Instruction
-              </p>
+              <p className="text-xs font-bold uppercase tracking-[0.5em]">Awaiting Instruction</p>
             </div>
           </div>
         )}

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  LayoutDashboard,
-  ShieldCheck,
-  Globe,
-  Terminal as TerminalIcon,
-  Cpu,
-} from "lucide-react";
+import { LayoutDashboard, ShieldCheck, Globe, Terminal as TerminalIcon, Cpu } from "lucide-react";
 import { PageId } from "../types";
 
 interface SidebarProps {
@@ -25,16 +19,12 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, onNavigate }) => {
     <div className="w-20 md:w-64 h-full border-r border-[#06af6e]/20 flex flex-col bg-black/80 brutalist-border relative z-50">
       <div className="p-6 mb-8">
         <div className="relative h-12 w-12 md:h-16 md:w-full flex items-center justify-center md:justify-start">
-          <div className="md:hidden text-2xl font-black text-[#06af6e] uv-glow">
-            AA
-          </div>
+          <div className="md:hidden text-2xl font-black text-[#06af6e] uv-glow">AA</div>
           <div className="hidden md:block">
             <div className="text-xl font-black uv-glow tracking-tighter text-[#06af6e]">
               AXIOM HIVE
             </div>
-            <div className="text-[8px] tracking-[0.4em] opacity-40 font-bold">
-              DETERMINISM
-            </div>
+            <div className="text-[8px] tracking-[0.4em] opacity-40 font-bold">DETERMINISM</div>
           </div>
         </div>
       </div>
@@ -50,10 +40,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, onNavigate }) => {
                 : "text-gray-500 hover:text-[#06af6e] hover:bg-[#06af6e]/5 border border-transparent"
             }`}
           >
-            <item.icon
-              size={20}
-              className={activePage === item.id ? "uv-glow" : ""}
-            />
+            <item.icon size={20} className={activePage === item.id ? "uv-glow" : ""} />
             <span className="hidden md:block text-xs font-bold uppercase tracking-widest">
               {item.label}
             </span>
