@@ -201,7 +201,7 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👤 Author
+## 👤 Author: Alexis M. Adams
 
 **Axiom Hive**
 - Email: devdollzai@gmail.com
